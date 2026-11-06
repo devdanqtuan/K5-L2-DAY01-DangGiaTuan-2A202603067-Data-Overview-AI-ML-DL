@@ -4,7 +4,7 @@
 
 **Runtime Colab:** CPU / GPU (T4 GPU trên Google Colab)
 
-**Python / PyTorch / Ultralytics:** Python 3.10+ / PyTorch 2.x / Ultralytics 8.4.145
+**Python / PyTorch / Ultralytics:** Python 3.13.18 / PyTorch 2.11.0+cu130 / Ultralytics 8.4.145
 
 **Checkpoint:** `yolo11n-cls.pt`, `yolo11n.pt`, `yolo11n-seg.pt`
 
@@ -71,7 +71,7 @@ Số lượng prediction theo ngưỡng: xem output ô so sánh `0.20` / `0.35` 
    **Trả lời:**
    - Ngưỡng `0.20`: có **17** predictions (gồm: 2 person, 5 bowl, 2 oven, 2 cup, 3 spoon, 1 potted plant, 1 dining table, 1 bottle).
    - Ngưỡng `0.60`: có **6** predictions (gồm: 2 person, 2 bowl, 2 oven).  
-   - Ngưỡng mặc định `0.35`, có **11** predictions).*
+   - Ngưỡng mặc định `0.35`, có **11** predictions.
 4. Khi hạ ngưỡng (giữ nhiều hộp hơn), người **reviewer** phải làm thêm việc gì?  
    **Trả lời:** Khi hạ ngưỡng (ví dụ từ 0.60 xuống 0.20), số lượng bounding box tăng mạnh (từ 6 lên 17 hộp) và kéo theo nhiều dự đoán có độ tin cậy thấp. Người reviewer sẽ phải:
    - Tốn thêm nhiều thời gian rà soát từng hộp để **loại bỏ các dự đoán dương tính giả (false positives)** do mô hình đoán nhầm nền hoặc vật thể không liên quan.
